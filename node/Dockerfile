@@ -10,4 +10,4 @@ run cd /root; npm install
 add . /root/
 
 workdir /root
-entrypoint npm start
+entrypoint ["node", "."]
