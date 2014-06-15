@@ -8,9 +8,9 @@ run npm install -g npm-start@1.2.3
 
 workdir /root
 
-add package.json /root/
-run npm install
-add . /root/
-run npm run build
+onbuild add package.json /root/
+onbuild run npm install
+onbuild add . /root/
+onbuild run npm run build
 
 entrypoint ["npm-start"]

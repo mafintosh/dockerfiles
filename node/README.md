@@ -1,8 +1,13 @@
-# node image
+# node docker image
 
-Basic node.js dockerfile with support for npm caching
-It will copy the contents of the build folder to `/root`
-and do an `npm install` and `npm start`
+Basic node dockerfile with support for npm install caching and npm start
+In addition to doing a `npm install` and `npm run build` it will copy the contents of the build folder to `/root`
+If package.json hasn't changed modules won't be redownloaded even though the other app content has changed
 
-An example app is included as well in server.js and package.json
-in order to test this
+Pull it from the docker registry using
+
+```
+$ docker pull mafintosh/node
+```
+
+An example app is included
