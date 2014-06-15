@@ -6,10 +6,11 @@ run curl -fs https://raw.githubusercontent.com/mafintosh/node-install/master/ins
 run node-install 0.10.29
 run npm install -g npm-start@1.2.3
 
-add package.json /root/
-run cd /root; npm install
-add . /root/
-run cd /root; npm run build
-
 workdir /root
+
+add package.json /root/
+run npm install
+add . /root/
+run npm run build
+
 entrypoint ["npm-start"]
