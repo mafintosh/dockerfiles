@@ -9,6 +9,7 @@ run npm install -g npm-start@1.2.3
 add package.json /root/
 run cd /root; npm install
 add . /root/
+run cd /root; npm build
 
 workdir /root
 entrypoint ["npm-start"]
