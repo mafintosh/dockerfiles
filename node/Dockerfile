@@ -9,8 +9,8 @@ run npm install -g npm-start@1.3.0
 workdir /root
 
 onbuild add package.json /root/
-onbuild run npm install
+onbuild run npm install --unsafe-perm
 onbuild add . /root/
-onbuild run npm run build
+onbuild run npm run build --unsafe-perm
 
 entrypoint ["npm-start"]
