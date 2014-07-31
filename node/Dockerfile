@@ -9,7 +9,7 @@ run npm install -g npm-start@1.3.1
 workdir /root
 
 onbuild add package.json /root/
-onbuild run npm install --unsafe-perm
+onbuild touch README.md; run npm install --unsafe-perm
 onbuild add . /root/
 onbuild run npm run build --unsafe-perm
 
