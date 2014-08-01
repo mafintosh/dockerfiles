@@ -3,13 +3,13 @@ from ubuntu:14.04
 run apt-get update
 run apt-get -qy install curl git-core build-essential python
 run curl -fs https://raw.githubusercontent.com/mafintosh/node-install/master/install | sh
-run node-install 0.10.29
+run node-install 0.10.30
 run npm install -g npm-start@1.3.1
 
 workdir /root
 
 onbuild add package.json /root/
-onbuild touch README.md; run npm install --unsafe-perm
+onbuild run echo README > README.md; npm install --unsafe-perm
 onbuild add . /root/
 onbuild run npm run build --unsafe-perm
 
