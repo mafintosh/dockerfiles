@@ -4,12 +4,13 @@ run apt-get update
 run apt-get -qy install curl git-core build-essential python
 run curl -fs https://raw.githubusercontent.com/mafintosh/node-install/master/install | sh
 run node-install 0.10.30
-run npm install -g npm-start@1.3.1
+run npm install -g npm-start@1.3.2
+run echo README > /root/README.md; npm config set color always
 
 workdir /root
 
 onbuild add package.json /root/
-onbuild run echo README > README.md; npm install --unsafe-perm
+onbuild run npm install --loglevel http --unsafe-perm 2>&1
 onbuild add . /root/
 onbuild run npm run build --unsafe-perm
 
