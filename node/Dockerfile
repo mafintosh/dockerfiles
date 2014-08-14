@@ -4,8 +4,8 @@ run apt-get update
 run apt-get -qy install curl git-core build-essential python
 run curl -fs https://raw.githubusercontent.com/mafintosh/node-install/master/install | sh
 run node-install 0.10.30
-run npm install -g npm-start@1.3.2
-run echo README > /root/README.md; npm config set color always
+run npm install -g npm-start@1.3.2 node-gyp@1.0.1
+run echo README > /root/README.md; npm config set color always; node-gyp install
 
 workdir /root
 
