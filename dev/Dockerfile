@@ -1,7 +1,7 @@
 from ubuntu:14.04
-run apt-get update; apt-get -y install curl git-core build-essential libgraphicsmagick1-dev vim python
+run apt-get update; apt-get -y install sudo curl git-core build-essential libgraphicsmagick1-dev vim python ruby1.9.3
 run curl -fs https://raw.githubusercontent.com/mafintosh/node-install/master/install | sh
-run node-install 0.10.29
+run node-install 0.10.31
 add .bashrc /root/
 workdir /root
 entrypoint /bin/bash --rcfile .bashrc
