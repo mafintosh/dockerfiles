@@ -1,1 +1,1 @@
-from mafintosh/node:0.10.31
+FROM mafintosh/node:0.10.32

@@ -2,6 +2,7 @@
   "name": "ticker-app",
   "version": "0.0.0",
   "dependencies": {
+    "minimist": "^1.1.0",
     "relative-date": "^1.1.1"
   }
 }
