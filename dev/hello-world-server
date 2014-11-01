@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+var http = require('http')
+var os = require('os')
+var then = Date.now()
+var cnt = 0
+
+var server = http.createServer(function(req, res) {
+  cnt++
+
+  var buf = new Buffer(JSON.stringify({
+    hello: 'world',
+    hostname: os.hostname(),
+    pid: process.pid,
+    count: cnt,
+    uptime: Math.round((Date.now() - then) / 1000)
+  }))
+
+  console.log('Received request from %s for %s', req.connection.address().address, req.url)
+
+  res.setHeader('Content-Length', buf.length)
+  res.setHeader('Content-Type', 'application/json; charset=utf-8')
+  res.end(buf)
+})
+
+server.listen(process.env.PORT || 8080)
