@@ -5,11 +5,11 @@ RUN echo "deb http://download.mono-project.com/repo/debian wheezy-apache24-compa
 RUN apt-get update
 RUN apt-get install -yq  mono-complete unzip
 RUN curl https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh && mozroots --import --sync
-ADD k-run kpm-restore kvm-upgrade /bin/
+ADD k kpm-restore kvm-upgrade /bin/
 RUN kvm-upgrade
 
 ONBUILD ADD project.json /root/project.json
 ONBUILD RUN kpm-restore
 ONBUILD ADD . /root/
 
-ENTRYPOINT k-run
+ENTRYPOINT ["/bin/k"]

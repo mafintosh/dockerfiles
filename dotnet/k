@@ -1,0 +1,8 @@
+#!/bin/bash
+source ~/.kre/kvm/kvm.sh
+
+if [ "$1" == "" ]; then
+  k run
+else
+  k "$@"
+fi
